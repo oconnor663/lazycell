@@ -1,3 +1,22 @@
+<a name="v0.1.0"></a>
+## v0.1.0 (2016-03-16)
+
+
+#### Features
+
+* **lib.rs:**  implement Default trait for LazyCell ([150a6304](https://github.com/indiv0/LazyCell/commit/150a6304a230ee1de8424e49c447ec1b2d6578ce))
+
+#### Chore
+
+*   increase version ([fa5a6b66](https://github.com/indiv0/LazyCell/commit/fa5a6b66e857ea9d6a645c199d959db4983bbe4d))
+* **Cargo.toml:**  update include directive ([c3142949](https://github.com/indiv0/LazyCell/commit/c3142949d50b0288d46f6ef4ca1f06f2b96d34f4), closes [#9](https://github.com/indiv0/LazyCell/issues/9))
+
+#### Style
+
+* **lib.rs:**  apply consistent style with rustfmt ([968f5460](https://github.com/indiv0/LazyCell/commit/968f5460f5b3b4ab15e21480a8f13b7fd4dc807c))
+
+
+
 <a name="v0.0.1"></a>
 ## v0.0.1 (2016-03-16)
 
