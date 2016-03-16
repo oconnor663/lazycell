@@ -4,6 +4,8 @@
 [![Crates.io](https://img.shields.io/crates/v/lazycell.svg)](https://crates.io/crates/lazycell)
 [![License: MIT/Apache-2.0](https://img.shields.io/crates/l/lazycell.svg)](#License)
 
+[Documentation](http://indiv0.github.io/lazycell/lazycell/)
+
 Rust library providing a lazily filled Cell.
 
 ## Credits
