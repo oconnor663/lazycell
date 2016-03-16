@@ -2,10 +2,3 @@
 repository = "https://github.com/indiv0/LazyCell"
 outfile = "CHANGELOG.md"
 from-latest-tag = true
-
-[sections]
-Documentation = ["docs"]
-Style = ["style", "sty"]
-Refactor = ["refactor", "rfac"]
-Test = ["test"]
-Chore = ["chore"]
