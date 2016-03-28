@@ -14,11 +14,29 @@
 //!
 //! With a `RefCell`, the inner contents cannot be borrowed for the lifetime of
 //! the entire object, but only of the borrows returned. A `LazyCell` is a
-//! variation on `RefCell` which allows borrows tied to the lifetime of the
-//! outer object.
+//! variation on `RefCell` which allows borrows to be tied to the lifetime of
+//! the outer object.
 //!
-//! The limitation of a `LazyCell` is that after initialized, it can never be
-//! modified.
+//! The limitation of a `LazyCell` is that after it is initialized, it can never
+//! be modified.
+//!
+//! # Example
+//!
+//! The following example shows a quick example of the basic functionality of
+//! `LazyCell`.
+//!
+//! ```
+//! use lazycell::LazyCell;
+//!
+//! let lazycell = LazyCell::new();
+//!
+//! assert_eq!(lazycell.borrow(), None);
+//! assert!(!lazycell.filled());
+//! lazycell.fill(1);
+//! assert!(lazycell.filled());
+//! assert_eq!(lazycell.borrow(), Some(&1));
+//! assert_eq!(lazycell.into_inner(), Some(1));
+//! ```
 
 #![deny(missing_docs)]
 #![cfg_attr(feature = "nightly", feature(plugin))]
