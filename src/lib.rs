@@ -88,3 +88,46 @@ impl<T> LazyCell<T> {
         self.inner.into_inner()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::LazyCell;
+
+    #[test]
+    fn test_borrow_from_empty() {
+        let lazycell: LazyCell<usize> = LazyCell::new();
+
+        let value = lazycell.borrow();
+        assert_eq!(value, None);
+    }
+
+    #[test]
+    fn test_fill_and_borrow() {
+        let lazycell = LazyCell::new();
+
+        assert!(!lazycell.filled());
+        lazycell.fill(1);
+        assert!(lazycell.filled());
+
+        let value = lazycell.borrow();
+        assert_eq!(value, Some(&1));
+    }
+
+    #[test]
+    #[should_panic(expected = "lazy cell is already filled")]
+    fn test_already_filled_panic() {
+        let lazycell = LazyCell::new();
+
+        lazycell.fill(1);
+        lazycell.fill(1);
+    }
+
+    #[test]
+    fn test_into_inner() {
+        let lazycell = LazyCell::new();
+
+        lazycell.fill(1);
+        let value = lazycell.into_inner();
+        assert_eq!(value, Some(1));
+    }
+}
