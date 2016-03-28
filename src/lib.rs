@@ -1,5 +1,4 @@
-// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
-// Original work Copyright (c) 2014 The Rust Project Developers
+// Original work Copyright (c) 2014-2015 The Rust Project Developers
 // Modified work Copyright (c) 2016 Nikita Pekin
 // See the README.md file at the top-level directory of this distribution.
 //
