@@ -1,5 +1,5 @@
 // Original work Copyright (c) 2014-2015 The Rust Project Developers
-// Modified work Copyright (c) 2016 Nikita Pekin
+// Modified work Copyright (c) 2016 Nikita Pekin and the lazycell contributors
 // See the README.md file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
