@@ -1,4 +1,4 @@
 [clog]
-repository = "https://github.com/indiv0/LazyCell"
+repository = "https://github.com/indiv0/lazycell"
 outfile = "CHANGELOG.md"
 from-latest-tag = true
