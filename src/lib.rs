@@ -25,7 +25,6 @@
 #![cfg_attr(feature = "clippy", plugin(clippy))]
 
 use std::cell::RefCell;
-use std::default::Default;
 use std::mem;
 
 /// A lazily filled Cell, with frozen contents.
@@ -70,12 +69,5 @@ impl<T> LazyCell<T> {
     /// Consumes this `LazyCell`, returning the underlying value.
     pub fn into_inner(self) -> Option<T> {
         self.inner.into_inner()
-    }
-}
-
-impl<T> Default for LazyCell<T> {
-    #[inline]
-    fn default() -> LazyCell<T> {
-        Self::new()
     }
 }
