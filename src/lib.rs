@@ -9,6 +9,10 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
+#![deny(missing_docs)]
+#![cfg_attr(feature = "nightly", feature(plugin))]
+#![cfg_attr(feature = "clippy", plugin(clippy))]
+
 //! This crate provides a LazyCell struct which acts as a lazily filled Cell,
 //! but with frozen contents.
 //!
@@ -19,10 +23,6 @@
 //!
 //! The limitation of a `LazyCell` is that after initialized, it can never be
 //! modified.
-
-#![deny(missing_docs)]
-#![cfg_attr(feature = "nightly", feature(plugin))]
-#![cfg_attr(feature = "clippy", plugin(clippy))]
 
 use std::cell::RefCell;
 use std::mem;
