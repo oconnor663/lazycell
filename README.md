@@ -22,6 +22,13 @@
 
 Rust library providing a lazily filled Cell.
 
+# Table of Contents
+
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Credits](#credits)
+* [License](#license)
+
 ## Usage
 
 Add the following to your `Cargo.toml`:
@@ -39,10 +46,21 @@ extern crate lazycell;
 
 See the [API docs][api-docs] for information on using the crate in your library.
 
+## Contributing
+
+Contributions are always welcome!
+If you have an idea for something to add (code, documentation, tests, examples,
+etc.) feel free to give it a shot.
+
+Please read [CONTRIBUTING.md][contributing] before you start contributing.
+
 ## Credits
 
 The LazyCell library is based originally on work by The Rust Project Developers
 for the project [crates.io][crates-io-repo].
+
+The list of contributors to this project can be found at
+[CONTRIBUTORS.md][contributors].
 
 ## License
 
@@ -52,6 +70,8 @@ License (Version 2.0).
 See [LICENSE-APACHE][license-apache], and [LICENSE-MIT][license-mit] for details.
 
 [api-docs]: https://indiv0.github.io/lazycell/lazycell
+[contributing]: https://github.com/indiv0/lazycell/blob/master/CONTRIBUTING.md "Contribution Guide"
+[contributors]: https://github.com/indiv0/lazycell/blob/master/CONTRIBUTORS.md "List of Contributors"
 [crates-io-repo]: https://github.com/rust-lang/crates.io "rust-lang/crates.io: Source code for crates.io"
 [license-apache]: https://github.com/indiv0/lazycell/blob/master/LICENSE-APACHE "Apache-2.0 License"
 [license-mit]: https://github.com/indiv0/lazycell/blob/master/LICENSE-MIT "MIT License"
