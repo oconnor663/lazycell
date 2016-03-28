@@ -1,3 +1,20 @@
+<a name="v0.2.0"></a>
+## v0.2.0 (2016-03-28)
+
+
+#### Features
+
+* **lazycell:**
+  *  add tests for `LazyCell` struct ([38f1313d](https://github.com/indiv0/lazycell/commit/38f1313d98542ca8c98b424edfa9ba9c3975f99e), closes [#30](https://github.com/indiv0/lazycell/issues/30))
+  *  remove unnecessary `Default` impl ([68c16d2d](https://github.com/indiv0/lazycell/commit/68c16d2df4e9d13d5298162c06edf918246fd758))
+
+#### Documentation
+
+* **CHANGELOG:**  removed unnecessary sections ([1cc0555d](https://github.com/indiv0/lazycell/commit/1cc0555d875898a01b0832ff967aed6b40e720eb))
+* **README:**  add link to documentation ([c8dc33f0](https://github.com/indiv0/lazycell/commit/c8dc33f01f2c0dc187f59ee53a2b73081053012b), closes [#13](https://github.com/indiv0/lazycell/issues/13))
+
+
+
 <a name="v0.1.0"></a>
 ## v0.1.0 (2016-03-16)
 
