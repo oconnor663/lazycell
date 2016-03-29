@@ -9,23 +9,15 @@ matrix:
 environment:
   matrix:
     # Earliest compatible stable version
-    - TARGET: i686-pc-windows-gnu
-      RUST_CHANNEL: 1.0.0
     - TARGET: x86_64-pc-windows-gnu
       RUST_CHANNEL: 1.0.0
     # Stable channel
-    - TARGET: i686-pc-windows-msvc
-      RUST_CHANNEL: stable
     - TARGET: x86_64-pc-windows-msvc
       RUST_CHANNEL: stable
     # Beta channel
-    - TARGET: i686-pc-windows-msvc
-      RUST_CHANNEL: beta
     - TARGET: x86_64-pc-windows-msvc
       RUST_CHANNEL: beta
     # Nightly channel
-    - TARGET: i686-pc-windows-msvc
-      RUST_CHANNEL: nightly
     - TARGET: x86_64-pc-windows-msvc
       RUST_CHANNEL: nightly
 
@@ -44,5 +36,5 @@ build: false
 
 # Equivalent to Travis' `script` phase
 test_script:
-  - cargo build
-  - cargo test
+  - cargo build --verbose
+  - cargo test --verbose
