@@ -1,3 +1,13 @@
+<a name="v0.2.1"></a>
+##  (2016-04-18)
+
+
+#### Documentation
+
+*   put types in between backticks ([607cf939](https://github.com/indiv0/lazycell/commit/607cf939b05e35001ba3070ec7a0b17b064e7be1))
+
+
+
 <a name="v0.2.0"></a>
 ## v0.2.0 (2016-03-28)
 
