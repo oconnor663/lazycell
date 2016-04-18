@@ -12,8 +12,8 @@
 #![cfg_attr(feature = "nightly", feature(plugin))]
 #![cfg_attr(feature = "clippy", plugin(clippy))]
 
-//! This crate provides a LazyCell struct which acts as a lazily filled Cell,
-//! but with frozen contents.
+//! This crate provides a `LazyCell` struct which acts as a lazily filled
+//! `Cell`, but with frozen contents.
 //!
 //! With a `RefCell`, the inner contents cannot be borrowed for the lifetime of
 //! the entire object, but only of the borrows returned. A `LazyCell` is a
@@ -44,13 +44,13 @@
 use std::cell::RefCell;
 use std::mem;
 
-/// A lazily filled Cell, with frozen contents.
+/// A lazily filled `Cell`, with frozen contents.
 pub struct LazyCell<T> {
     inner: RefCell<Option<T>>,
 }
 
 impl<T> LazyCell<T> {
-    /// Creates a new empty lazy cell.
+    /// Creates a new, empty, `LazyCell`.
     pub fn new() -> LazyCell<T> {
         LazyCell { inner: RefCell::new(None) }
     }
