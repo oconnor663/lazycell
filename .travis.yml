@@ -46,6 +46,7 @@ after_success:
   - travis-cargo coveralls --no-sudo --verify
 env:
   global:
+    - RUST_BACKTRACE=1
     # override the default '--features unstable' used for the nightly branch
     - TRAVIS_CARGO_NIGHTLY_FEATURE="nightly-testing"
     # encrypted Github token for doc upload
