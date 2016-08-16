@@ -1,3 +1,17 @@
+<a name="v0.3.0"></a>
+##  (2016-08-16)
+
+
+#### Features
+
+*   add AtomicLazyCell which is thread-safe ([85afbd36](https://github.com/indiv0/lazycell/commit/85afbd36d8a148e14cc53654b39ddb523980124d))
+
+#### Improvements
+
+*   Use UnsafeCell instead of RefCell ([3347a8e9](https://github.com/indiv0/lazycell/commit/3347a8e97d2215a47e25c1e2fc953e8052ad8eb6))
+
+
+
 <a name="v0.2.1"></a>
 ##  (2016-04-18)
 
