@@ -1,3 +1,17 @@
+<a name="v0.4.0"></a>
+##  (2016-08-17)
+
+
+#### Breaking Changes
+
+* **LazyCell:**  return Err(value) on full cell ([68f3415d](https://github.com/indiv0/lazycell/commit/68f3415dd5d6a66ba047a133b7028ebe4f1c5070), breaks [#](https://github.com/indiv0/lazycell/issues/))
+
+#### Improvements
+
+* **LazyCell:**  return Err(value) on full cell ([68f3415d](https://github.com/indiv0/lazycell/commit/68f3415dd5d6a66ba047a133b7028ebe4f1c5070), breaks [#](https://github.com/indiv0/lazycell/issues/))
+
+
+
 <a name="v0.3.0"></a>
 ##  (2016-08-16)
 
