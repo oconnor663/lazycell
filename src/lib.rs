@@ -35,7 +35,7 @@
 //!
 //! assert_eq!(lazycell.borrow(), None);
 //! assert!(!lazycell.filled());
-//! lazycell.fill(1);
+//! lazycell.fill(1).ok();
 //! assert!(lazycell.filled());
 //! assert_eq!(lazycell.borrow(), Some(&1));
 //! assert_eq!(lazycell.into_inner(), Some(1));
@@ -60,13 +60,15 @@ impl<T> LazyCell<T> {
 
     /// Put a value into this cell.
     ///
-    /// This function will fail if the cell has already been filled.
-    pub fn fill(&self, t: T) {
+    /// This function will return Err(value) is the cell is already full.
+    pub fn fill(&self, t: T) -> Result<(), T> {
         let mut slot = unsafe { &mut *self.inner.get() };
         if slot.is_some() {
-            panic!("lazy cell is already filled")
+	    return Err(t);
         }
         *slot = Some(t);
+
+	Ok(())
     }
 
     /// Test whether this cell has been previously filled.
@@ -169,7 +171,7 @@ mod tests {
         let lazycell = LazyCell::new();
 
         assert!(!lazycell.filled());
-        lazycell.fill(1);
+        lazycell.fill(1).unwrap();
         assert!(lazycell.filled());
 
         let value = lazycell.borrow();
@@ -177,19 +179,18 @@ mod tests {
     }
 
     #[test]
-    #[should_panic(expected = "lazy cell is already filled")]
-    fn test_already_filled_panic() {
+    fn test_already_filled_error() {
         let lazycell = LazyCell::new();
 
-        lazycell.fill(1);
-        lazycell.fill(1);
+        lazycell.fill(1).unwrap();
+        assert_eq!(lazycell.fill(1), Err(1));
     }
 
     #[test]
     fn test_into_inner() {
         let lazycell = LazyCell::new();
 
-        lazycell.fill(1);
+        lazycell.fill(1).unwrap();
         let value = lazycell.into_inner();
         assert_eq!(value, Some(1));
     }

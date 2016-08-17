@@ -9,7 +9,7 @@ fn test_lazycell() {
     assert_eq!(lazycell.borrow(), None);
     assert!(!lazycell.filled());
 
-    lazycell.fill(1);
+    lazycell.fill(1).unwrap();
 
     assert!(lazycell.filled());
     assert_eq!(lazycell.borrow(), Some(&1));
@@ -17,10 +17,9 @@ fn test_lazycell() {
 }
 
 #[test]
-#[should_panic(expected = "lazy cell is already filled")]
-fn test_already_filled_panic() {
+fn test_already_filled_error() {
     let lazycell: LazyCell<usize> = LazyCell::new();
 
-    lazycell.fill(1);
-    lazycell.fill(1);
+    lazycell.fill(1).unwrap();
+    assert_eq!(lazycell.fill(1), Err(1));
 }
