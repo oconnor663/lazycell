@@ -64,11 +64,11 @@ impl<T> LazyCell<T> {
     pub fn fill(&self, t: T) -> Result<(), T> {
         let mut slot = unsafe { &mut *self.inner.get() };
         if slot.is_some() {
-	    return Err(t);
+            return Err(t);
         }
         *slot = Some(t);
 
-	Ok(())
+        Ok(())
     }
 
     /// Test whether this cell has been previously filled.
