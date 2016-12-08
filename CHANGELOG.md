@@ -1,3 +1,13 @@
+<a name="v0.5.0"></a>
+## v0.5.0 (2016-12-08)
+
+
+#### Features
+
+*   add borrow_with to LazyCell ([a15efa35](https://github.com/indiv0/lazycell/commit/a15efa359ea5a31a66ba57fc5b25f90c87b4b0dd))
+
+
+
 <a name="v0.4.0"></a>
 ##  (2016-08-17)
 

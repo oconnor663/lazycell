@@ -34,7 +34,7 @@ Add the following to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-lazycell = "0.4"
+lazycell = "0.5"
 ```
 
 And in your `lib.rs` or `main.rs`:
