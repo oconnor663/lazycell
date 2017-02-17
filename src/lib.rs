@@ -87,7 +87,7 @@ impl<T> LazyCell<T> {
 
     /// Borrows the contents of this lazy cell for the duration of the cell
     /// itself.
-    /// 
+    ///
     /// If the cell has not yet been filled, the cell is first filled using the
     /// function provided.
     pub fn borrow_with<F: FnOnce() -> T>(&self, f: F) -> &T {
@@ -165,12 +165,12 @@ impl<T> AtomicLazyCell<T> {
     }
 }
 
-unsafe impl<T: Sync> Sync for AtomicLazyCell<T> { }
-unsafe impl<T: Send> Send for AtomicLazyCell<T> { }
+unsafe impl<T: Sync> Sync for AtomicLazyCell<T> {}
+unsafe impl<T: Send> Send for AtomicLazyCell<T> {}
 
 #[cfg(test)]
 mod tests {
-    use super::{LazyCell, AtomicLazyCell};
+    use super::{AtomicLazyCell, LazyCell};
 
     #[test]
     fn test_borrow_from_empty() {
