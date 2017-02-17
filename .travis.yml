@@ -16,26 +16,20 @@ rust:
   - stable
   # and the first stable one (this should be bumped as the minimum Rust version
   # required changes)
-  - 1.0.0
+  - 1.8.0
 os:
   - linux
-  - osx
-cache:
-  directories:
-    - $HOME/.cargo
+cache: cargo
 before_script:
   # load travis-cargo
-  - |
-      pip install 'travis-cargo<0.2' --user &&
-      export PATH=$HOME/.local/bin/:$PATH &&
-      export PATH=$HOME/Library/Python/2.7/bin:$PATH
+  - pip install 'travis-cargo<0.2' --user
+  - export PATH=$HOME/.local/bin/:$PATH
 # the main build
 script:
-  - |
-      travis-cargo build &&
-      travis-cargo test &&
-      travis-cargo bench &&
-      travis-cargo --only stable doc
+  - travis-cargo build
+  - travis-cargo test
+  - travis-cargo bench
+  - travis-cargo --only stable doc
 after_success:
   # upload the documentation from the build with stable (automatically only
   # actually runs from the master branch, not individual PRs)
