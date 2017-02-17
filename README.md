@@ -6,10 +6,6 @@
         <td><a href="https://travis-ci.org/indiv0/lazycell" title="Travis Build Status"><img src="https://travis-ci.org/indiv0/lazycell.svg?branch=master" alt="travis-badge"></img></a></td>
     </tr>
     <tr>
-        <td><strong>Windows</strong></td>
-        <td><a href="https://ci.appveyor.com/project/indiv0/lazycell" title="Appveyor Build Status"><img src="https://ci.appveyor.com/api/projects/status/8sql0kict385l3cy?svg=true" alt="appveyor-badge"></img></a></td>
-    </tr>
-    <tr>
         <td colspan="2">
             <a href="https://indiv0.github.io/lazycell/lazycell" title="API Docs"><img src="https://img.shields.io/badge/API-docs-blue.svg" alt="api-docs-badge"></img></a>
             <a href="https://crates.io/crates/lazycell" title="Crates.io"><img src="https://img.shields.io/crates/v/lazycell.svg" alt="crates-io"></img></a>
