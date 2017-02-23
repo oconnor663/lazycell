@@ -3,6 +3,7 @@ alphabetical order.
 
 * [Carl Lerche](https://github.com/carllerche)
 * [J/A](https://github.com/archer884)
+* [Jack O'Connor](https://github.com/oconnor663)
 * [Nikita Pekin](https://github.com/indiv0)
 
 [lazycell]: https://github.com/indiv0/lazycell
