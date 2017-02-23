@@ -39,5 +39,12 @@ Please use the following guidelines when contributing to `lazycell`:
    we'll merge when ready.
    This a good way to discuss proposed changes.)
 
+# Notes
+
+* Ensure that you update the copyright dates, if necessary (e.g. `2014, 2016` ->
+  `2014, 2016-2017`)
+* Make sure you add yourself to the [`CONTRIBUTORS.md`][contributors]!
+
 [clog-cli]: https://github.com/clog-tool/clog-cli "clog-tool/clog-cli"
+[contributors]: CONTRIBUTORS.md "CONTRIBUTORS.md"
 [conventional-changelog-format]: https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit "Angular Git Commit Guidelines"
