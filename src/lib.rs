@@ -105,6 +105,16 @@ impl<T> LazyCell<T> {
     }
 }
 
+impl<T: Copy> LazyCell<T> {
+    /// Returns a copy of the contents of the lazy cell.
+    ///
+    /// This function will return `Some` if the cell has been previously initialized,
+    /// and `None` if it has not yet been initialized.
+    pub fn get(&self) -> Option<T> {
+        unsafe { *self.inner.get() }
+    }
+}
+
 // Tracks the AtomicLazyCell inner state
 const NONE: usize = 0;
 const LOCK: usize = 1;
@@ -165,7 +175,21 @@ impl<T> AtomicLazyCell<T> {
     }
 }
 
+impl<T: Copy> AtomicLazyCell<T> {
+    /// Returns a copy of the contents of the lazy cell.
+    ///
+    /// This function will return `Some` if the cell has been previously initialized,
+    /// and `None` if it has not yet been initialized.
+    pub fn get(&self) -> Option<T> {
+        match self.state.load(Ordering::Acquire) {
+            SOME => unsafe { *self.inner.get() },
+            _ => None,
+        }
+    }
+}
+
 unsafe impl<T: Sync> Sync for AtomicLazyCell<T> {}
+
 unsafe impl<T: Send> Send for AtomicLazyCell<T> {}
 
 #[cfg(test)]
@@ -177,6 +201,9 @@ mod tests {
         let lazycell: LazyCell<usize> = LazyCell::new();
 
         let value = lazycell.borrow();
+        assert_eq!(value, None);
+
+        let value = lazycell.get();
         assert_eq!(value, None);
     }
 
@@ -190,6 +217,9 @@ mod tests {
 
         let value = lazycell.borrow();
         assert_eq!(value, Some(&1));
+
+        let value = lazycell.get();
+        assert_eq!(value, Some(1));
     }
 
     #[test]
@@ -242,6 +272,9 @@ mod tests {
 
         let value = lazycell.borrow();
         assert_eq!(value, None);
+
+        let value = lazycell.get();
+        assert_eq!(value, None);
     }
 
     #[test]
@@ -254,6 +287,9 @@ mod tests {
 
         let value = lazycell.borrow();
         assert_eq!(value, Some(&1));
+
+        let value = lazycell.get();
+        assert_eq!(value, Some(1));
     }
 
     #[test]
