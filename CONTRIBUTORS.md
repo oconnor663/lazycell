@@ -1,6 +1,7 @@
 The following is a list of contributors to the [lazycell][lazycell] project, in
 alphabetical order.
 
+* [Aaron Trent](https://github.com/novacrazy)
 * [Carl Lerche](https://github.com/carllerche)
 * [J/A](https://github.com/archer884)
 * [Jack O'Connor](https://github.com/oconnor663)
